@@ -1,2 +1,0 @@
-# Tempus
-Time management application
