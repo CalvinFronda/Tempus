@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router, Route,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -33,6 +30,14 @@ if (localStorage.jwtToken) {
   }
 }
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      showMe: true
+    }
+  }
+
   render() {
     return (
       <Provider store={store}>
@@ -46,6 +51,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
+
 
           </div>
         </Router>
